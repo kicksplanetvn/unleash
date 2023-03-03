@@ -18,11 +18,11 @@ sudo docker pull $IMAGE_URL
 sudo docker network create unleash
 sudo docker run -e POSTGRES_PASSWORD=8779BQk3cfh6y9oNNNWdjOWk1HU4JrVYjw8A \
   -e POSTGRES_USER=unleash_user -e POSTGRES_DB=unleash \
-  --network unleash --name postgres postgres
+  -d --network unleash --name postgres postgres
 sudo docker run --name $CONTAINER_NAME -p 4242:4242 \
   -e DATABASE_HOST=postgres -e DATABASE_NAME=unleash \
   -e DATABASE_USERNAME=unleash_user -e DATABASE_PASSWORD=8779BQk3cfh6y9oNNNWdjOWk1HU4JrVYjw8A \
   -e DATABASE_SSL=false \
-  --network $IMAGE_URL
+  -d --network $IMAGE_URL
 
 EOF
