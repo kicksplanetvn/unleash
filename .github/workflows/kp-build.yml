@@ -32,11 +32,11 @@ jobs:
                   echo '::set-output name=url::${{ secrets.ECR_REGISTRY }}:${{ inputs.env }}-latest'
             - name: Docker login
               run: aws ecr get-login-password | docker login --username AWS --password-stdin ${{ secrets.ECR_REGISTRY }}
-            - name: Define .env
-              run: |
-                  export NODE_ENV=production
-                  cp .env.${{ inputs.env }} .env
-                  cat .env
+            # - name: Define .env
+            #   run: |
+            #       export NODE_ENV=production
+            #       cp .env.${{ inputs.env }} .env
+            #       cat .env
             - name: Build and push
               uses: docker/build-push-action@v3
               with:
