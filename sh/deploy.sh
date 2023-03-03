@@ -3,7 +3,7 @@
 HOST=$1
 ECR_REGISTRY=$2
 IMAGE_URL=$3
-CONTAINER_NAME=kicksplanet
+CONTAINER_NAME=unleash
 
 ssh \
     -o StrictHostKeyChecking=no \
@@ -23,6 +23,6 @@ sudo docker run --name $CONTAINER_NAME -p 4242:4242 \
   -e DATABASE_HOST=postgres -e DATABASE_NAME=unleash \
   -e DATABASE_USERNAME=unleash_user -e DATABASE_PASSWORD=8779BQk3cfh6y9oNNNWdjOWk1HU4JrVYjw8A \
   -e DATABASE_SSL=false \
-  --network
+  --network $IMAGE_URL
 
 EOF
