@@ -122,7 +122,7 @@ class UserService {
         if (userCount === 0) {
             // create default admin user
             try {
-                const pwd = 'unleash4all';
+                const pwd = 'V7uKZ34cPNtx';
                 this.logger.info(
                     `Creating default user "admin" with password "${pwd}"`,
                 );
