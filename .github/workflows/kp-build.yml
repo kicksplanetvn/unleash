@@ -28,8 +28,8 @@ jobs:
             - name: Define tag
               id: tag
               run: |
-                  echo '::set-output name=name::${{ inputs.env }}-latest'
-                  echo '::set-output name=url::${{ secrets.ECR_REGISTRY }}:${{ inputs.env }}-latest'
+                  echo '::set-output name=name::latest'
+                  echo '::set-output name=url::${{ secrets.ECR_REGISTRY }}:latest'
             - name: Docker login
               run: aws ecr get-login-password | docker login --username AWS --password-stdin ${{ secrets.ECR_REGISTRY }}
             # - name: Define .env
