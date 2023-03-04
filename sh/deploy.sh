@@ -13,6 +13,7 @@ ssh \
 
 sh docker_login.sh $ECR_REGISTRY
 sudo docker stop $CONTAINER_NAME
+sudo docker stop postgres
 sudo docker system prune -a -f
 sudo docker pull $IMAGE_URL
 sudo docker network create unleash
