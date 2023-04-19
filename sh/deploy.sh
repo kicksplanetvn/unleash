@@ -27,7 +27,7 @@ sudo docker run --name $CONTAINER_NAME -p 4242:4242 \
   -e ADMIN_USERNAME=admin \
   -e ADMIN_PASSWORD=V7uKZ34cPNtx \
   -e INIT_FRONTEND_API_TOKENS=default:development.unleash-insecure-frontend-api-token \
-  -e INIT_CLIENT_API_TOKENS=default:development.unleash-insecure-api-token
+  -e INIT_CLIENT_API_TOKENS=default:development.unleash-insecure-api-token \
   -d --network unleash $IMAGE_URL
 
 EOF
