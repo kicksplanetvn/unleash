@@ -11,7 +11,7 @@ ssh \
     $HOST \
 << EOF
 
-sh docker_login.sh $ECR_REGISTRY
+aws ecr get-login-password | sudo docker login --username AWS --password-stdin $ECR_REGISTRY
 sudo docker stop $CONTAINER_NAME
 sudo docker stop postgres
 sudo docker system prune -a -f
